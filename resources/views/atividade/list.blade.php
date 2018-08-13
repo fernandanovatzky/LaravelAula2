@@ -2,6 +2,7 @@
 <hr>
 @foreach($atividades as $atividade)
 	<h3>{{$atividade->scheduledto}}</h3>
+	<p><a href="/atividades/{{$atividade->id}}">{{$atividade->title}}</a></p>
 	<p>{{$atividade->title}}</p>
 	<p>{{$atividade->description}}</p>
 	<br>
