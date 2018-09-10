@@ -45,9 +45,15 @@ class AtividadeController extends Controller
      * @param  \App\Atividade  $atividade
      * @return \Illuminate\Http\Response
      */
-    public function show(Atividade $atividade)
+    public function show($id)
     {
-        //
+        $atividade = Atividade::find($id);
+        return view('atividade.show', ['atividade'=> $atividade]);
+
+        $mensagem = mensagem::find($id);
+        return view('mensagem.show', ['mensagem'=> $mensagem]);
+
+
     }
 
     /**
@@ -56,7 +62,7 @@ class AtividadeController extends Controller
      * @param  \App\Atividade  $atividade
      * @return \Illuminate\Http\Response
      */
-    public function edit(Atividade $atividade)
+    public function edit($id)
     {
         //
     }
@@ -68,7 +74,7 @@ class AtividadeController extends Controller
      * @param  \App\Atividade  $atividade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Atividade $atividade)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -79,7 +85,7 @@ class AtividadeController extends Controller
      * @param  \App\Atividade  $atividade
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Atividade $atividade)
+    public function destroy($id)
     {
         //
     }
