@@ -21,3 +21,15 @@ Route::get('/mensagens' , 'MensagemController@index');
 
 Route::get("/atividades/{id}", "AtividadeController@show");
 Route::get("/mensagens/{id}", "MensagemController@show");
+
+Route::get('/atividades/create','AtividadeController@create');
+Route::get('/mensagens/create','MensagemController@create');
+
+Route::get('/atividades', 'AtividadeController@store');
+Route::get('/mensagens' , 'MensagemController@store');
+
+Route::get('/atividades/{id}/edit', 'AtividadeController@edit');
+Route::get('/mensagens/{id}/edit', 'MensagemController@edit');
+
+Route::put('/atividades/{id}', 'AtividadeController@update');
+Route::put('/mensagens/{id}', 'MensagemController@update');
