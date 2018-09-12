@@ -151,6 +151,21 @@ class AtividadeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $obj_atividade = Atividade::findOrFail($id);
+        $obj_atividade->delete($id);
+        return redirect ('/atividades')->with('sucess', 'Atividade excluida com sucesso!!!');
+
+
     }
+
+
+
+    public function delete($id)
+    {
+        $obj_Atividade= Atividade::findOrFail($id);
+        return view('atividade.delete', ['atividade' => $obj_Atividade]);
+
+    }
+
 }

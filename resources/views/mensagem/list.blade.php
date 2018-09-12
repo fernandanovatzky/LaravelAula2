@@ -1,12 +1,17 @@
 <h1>Lista de mensagens</h1>
 <hr>
 @foreach($mensagem as $mensagem)
-	<h3>{{$mensagem->scheduledto}}</h3>
-	<p><a href="/mensagem/{{$mensagem->id}}">{{$mensagem->title}}</a></p>
-	<p>{{$mensagem->title}}</p>
-	<p>{{$mensagem->description}}</p>
+	<p>Titulo: <a href="/mensagens/{{$mensagem->id}}">{{$mensagem->titulo}}</a></p>
+	<p>Autor: {{$mensagem->autor}}</p>
+	<p>Texto: {{$mensagem->texto}}</p>
+	<a href="/mensagens/{{$mensagem->id}}/edit">Editar</a>
+	<a href="/mensagens/{{$mensagem->id}}/delete">Deletar</a>
+	<br>
 	<br>
 @endforeach
+
+
+<a href="/mensagens/create">Criar nova mensagem</a>
 
 
 <!-- EXIBE MENSAGENS DE SUCESSO-->
